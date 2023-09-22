@@ -6,13 +6,13 @@
 ## Overview
 
 Binary application that processes transactions (in the form of CSV records) and
-outputs the balance of all accounts.
+outputs the balance of all accounts.   
 In a production environment, this would've likely been a TCP server or even
-better implemented via managed Cloud Services.
+better implemented via managed Cloud Services.   
 While the current implemention is far from anything production worthy, it tries
-to be somewhat compatible at least in spirit.
+to be somewhat compatible at least in spirit.   
 It tries to split the code into client/server, client reads CSV records and
-sends them to the server.
+sends them to the server.   
 The server receives each record in the order they were sent (as we don't want
 to screw up a client's account by doing something else than they asked).
 Then it dispatches each record to a per account handler which processes it and
@@ -42,7 +42,7 @@ its implementation has wrinkles.
 * `tracing` for nice stdout logs during debugging
 
 Overall, a bit heavier in dependencies than I would've liked, but it's a small
-price to pay in order to type faster.
+price to pay in order to type faster.   
 In a production environment, serious care should be exercised when consuming
 3rd party crates.
 
