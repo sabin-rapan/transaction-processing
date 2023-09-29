@@ -7,12 +7,16 @@ use serde::Serialize;
 /// Error conditions that may arise when creating a new `Account` objects.
 #[derive(Debug, thiserror::Error, PartialEq, Eq)]
 pub enum Error {
+    /// bla
     #[error("Account balance overflow")]
     Overflow,
+    /// bla
     #[error("Account is locked")]
     Locked,
+    /// bla
     #[error("Account has insufficient funds")]
     InsufficientFunds,
+    /// bla
     #[error("Account operation has invalid input")]
     InvalidInput,
 }
@@ -35,6 +39,7 @@ pub struct Account {
 }
 
 impl Account {
+    /// bla
     pub fn new(id: Id) -> Self {
         Self {
             id,
@@ -45,34 +50,41 @@ impl Account {
         }
     }
 
+    /// bla
     #[allow(dead_code)]
     pub fn available(&self) -> Amount {
         self.available
     }
 
+    /// bla
     #[allow(dead_code)]
     pub fn held(&self) -> Amount {
         self.held
     }
 
+    /// bla
     #[allow(dead_code)]
     pub fn total(&self) -> Amount {
         self.total
     }
 
+    /// bla
     pub fn locked(&self) -> bool {
         self.locked
     }
 
+    /// bla
     pub fn id(&self) -> Id {
         self.id
     }
 
+    /// bla
     #[allow(dead_code)]
     pub fn set_locked(&mut self, locked: bool) {
         self.locked = locked;
     }
 
+    /// bla
     pub fn deposit(&mut self, amount: Amount) -> Result<()> {
         if amount <= Amount::ZERO {
             return Err(Error::InvalidInput);
@@ -88,6 +100,7 @@ impl Account {
         Ok(())
     }
 
+    /// bla
     #[allow(dead_code)]
     pub fn dispute(&mut self, amount: Amount) -> Result<()> {
         if amount <= Amount::ZERO {
@@ -110,6 +123,7 @@ impl Account {
         Ok(())
     }
 
+    /// bla
     pub fn withdrawal(&mut self, amount: Amount) -> Result<()> {
         if amount <= Amount::ZERO {
             return Err(Error::InvalidInput);
@@ -137,6 +151,7 @@ impl Account {
         Ok(())
     }
 
+    /// bla
     #[allow(dead_code)]
     pub fn resolve(&mut self, amount: Amount) -> Result<()> {
         if amount <= Amount::ZERO {
@@ -159,6 +174,7 @@ impl Account {
         Ok(())
     }
 
+    /// bla
     #[allow(dead_code)]
     pub fn charge_back(&mut self, amount: Amount) -> Result<()> {
         if amount <= Amount::ZERO {

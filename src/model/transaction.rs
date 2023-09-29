@@ -1,13 +1,13 @@
 #![deny(missing_docs)]
 #![deny(warnings)]
 
-use serde::Deserialize;
+use serde::{Deserialize, Serialize};
 
 /// Transaction ID.
 pub type Id = u32;
 
 /// Supported types of transactions.
-#[derive(Copy, Clone, Deserialize, PartialEq, Debug)]
+#[derive(Copy, Clone, Deserialize, Debug, PartialEq, Eq, Serialize)]
 pub enum TransactionType {
     /// Deposit transaction.
     #[serde(alias = "deposit")]
@@ -31,13 +31,17 @@ pub enum TransactionType {
 }
 
 /// Transaction data structure used as API payload.
-#[derive(Copy, Clone, Deserialize, Debug)]
+#[derive(Copy, Clone, Deserialize, Debug, Serialize, PartialEq)]
 pub struct TransactionRecord {
+    /// bla
     #[serde(alias = "type")]
     pub transaction_type: TransactionType,
+    /// bla
     pub client: crate::model::account::Id,
     #[serde(alias = "tx")]
+    /// bla
     pub id: Id,
+    /// bla
     pub amount: Option<f64>,
 }
 

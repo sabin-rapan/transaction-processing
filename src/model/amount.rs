@@ -2,7 +2,7 @@
 #![deny(warnings)]
 
 use rust_decimal::prelude::*;
-use serde::{Serialize, Serializer};
+use serde::{Serialize, Serializer, Deserialize};
 
 /// Used to express currency amounts
 ///
@@ -24,7 +24,7 @@ use serde::{Serialize, Serializer};
 ///
 /// Amount::ZERO, Amount::MIN, Amount::MAX are declared to make it clear what are the bounds of the
 /// amount, even though they are not used except in tests.
-#[derive(Copy, Clone, Debug, Default, PartialEq, Eq, PartialOrd, Ord)]
+#[derive(Copy, Clone, Debug, Default, PartialEq, Eq, PartialOrd, Ord, Deserialize)]
 pub struct Amount(Decimal);
 
 impl Amount {
