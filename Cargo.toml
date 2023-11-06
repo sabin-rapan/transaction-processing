@@ -7,7 +7,7 @@ edition = "2021"
 clap = { version = "4.4.4", features = ["derive"] }
 tokio = { version = "1.32.0", features = ["full"] }
 csv-async = { version = "1.2.6", features = ["with_serde", "tokio"]}
-serde = { version = "1.0.188", features = ["derive"]}
+serde = { version = "1.0.191", features = ["derive"]}
 tokio-stream = "0.1.14"
 rust_decimal = "1.32.0"
 dashmap = "5.5.3"
