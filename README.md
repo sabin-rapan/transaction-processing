@@ -6,7 +6,7 @@
 ## Overview
 
 Binary application that processes transactions (in the form of CSV records) and
-outputs the balance of all accounts.   
+outputs the balance of accounts.   
 
 ### Architecture
 
