@@ -5,7 +5,7 @@ edition = "2021"
 
 [dependencies]
 clap = { version = "4.4.4", features = ["derive"] }
-tokio = { version = "1.32.0", features = ["full"] }
+tokio = { version = "1.35.1", features = ["full"] }
 csv-async = { version = "1.2.6", features = ["with_serde", "tokio"]}
 serde = { version = "1.0.188", features = ["derive"]}
 tokio-stream = "0.1.14"
