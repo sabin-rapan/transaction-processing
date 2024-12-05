@@ -11,7 +11,7 @@ serde = { version = "1.0.188", features = ["derive"]}
 tokio-stream = "0.1.14"
 rust_decimal = "1.32.0"
 dashmap = "5.5.3"
-thiserror = "1.0.48"
+thiserror = "1.0.51"
 tracing = "0.1.37"
 tracing-subscriber = { version = "0.3.17", features = ["env-filter", "time"]}
 tokio-util = "0.7.9"
